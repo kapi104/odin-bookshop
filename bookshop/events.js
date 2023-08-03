@@ -71,10 +71,9 @@ const displayBook = function() {
   container.appendChild(book);
 
   removeBook = document.querySelectorAll('.delete');
+  readButton = document.querySelectorAll('.read');
 
   // remove book button event
-
-
 
 removeBook.forEach((btn) => {
   btn.addEventListener('click', (e) => {
@@ -86,6 +85,14 @@ removeBook.forEach((btn) => {
     removeFromShelf(book);
   })
 }, )
+
+// read button click event 
+
+readButton.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    (e.target.classList.contains("unread")) ? e.target.classList.remove('unread') : e.target.classList.add('unread')
+  }, false)
+})
 }
 
 let setReadStatus = function () {
@@ -168,12 +175,6 @@ const hideForm = function() {
 closeForm.addEventListener('click', hideForm, false);
 
 
-// read button click event 
 
-readButton.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    (e.target.classList.contains("unread")) ? e.target.classList.remove('unread') : e.target.classList.add('unread')
-  }, false)
-})
 
 
